@@ -25,13 +25,12 @@ export const SettingsIcon = styled(FaCog)`
   top: 5%;
   right: 95%;
   font-size: 450%;
-  color: red;
+  color: #FBC21B;
 `;
 
 export const Alert = styled.div`
   color: red;
   background-color: #f8d7da;
   padding: 10px;
-  /* border-radius: 5px; */
   margin-bottom: 20px;
 `;

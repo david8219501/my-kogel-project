@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import SearchPage from './components/SearchPage'
+import SearchPage from './components/SearchPage/SearchPage'
 import SafeRoutes from './components/SafeRouting';
 import NewAccount from './components/NewAccount';
 import Settings from './components/Settings';

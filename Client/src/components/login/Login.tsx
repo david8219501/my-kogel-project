@@ -76,8 +76,6 @@ const Login = () => {
           lastName: lastName
         };
 
-        // בעדכון ה-userData
-        // setUserData([...userData, newUser]);
         setShowAlert("!משתמש נוצר בהצלחה");
         setTimeout(() => {
           validUser("user" ,newUser.firstName, newUser.lastName);

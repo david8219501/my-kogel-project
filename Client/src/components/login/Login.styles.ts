@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  border: 1px solid;
   width: 99%;
   height: 99%;
 `;
@@ -39,7 +38,7 @@ export const Input = styled.input`
   font-size: 180%;
   padding: 1% 1% 1% 2%;
   border: none;
-  text-align: left;
+  text-align: right;
   border-radius: 50px;
   font-weight: 600;
 `;
@@ -68,6 +67,8 @@ export const NewAccount = styled(Link)`
   font-weight: 600;
   border: none;
   text-decoration: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
 
   &:hover {
     color: lightblue;
@@ -83,16 +84,14 @@ export const Alert = styled.div`
 
 export const ShowIcon = styled(BiShow)`
   position: absolute;
-  right: 10px; 
-  margin-top: 10px;
-  width: 40px;
-  height: 40px;
+  right: 62%; 
+  width: 60%;
+  height: 60%;
 `;
 
 export const HideIcon = styled(BiHide)`
   position: absolute;
-  right: 10px;
-  margin-top: 10px;
-  width: 40px;
-  height: 40px;
+  right: 62%; 
+  width: 60%;
+  height: 60%;
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import Login from './Login';
-import PageBackground from './PageBackground';
+import Login from './login/Login';
+import PageBackground from './shared/PageBackground';
 import * as Styled from './Style.styles';
 
 const HomePage = () => {

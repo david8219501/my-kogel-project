@@ -14,10 +14,10 @@ export const Background = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 40%;
-  height: 30%;
+  width: 30%;
+  height: 20%;
   margin-top: 3%;
-  margin-bottom: 3%;
+  margin-bottom: 5%;
 `;
 
 export const SettingsIcon = styled(FaCog)`
@@ -32,6 +32,6 @@ export const Alert = styled.div`
   color: red;
   background-color: #f8d7da;
   padding: 10px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   margin-bottom: 20px;
 `;

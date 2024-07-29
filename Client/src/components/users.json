@@ -1,17 +1,19 @@
 [
     {
-      "username": "user",
+      "username": "meneger@gmail.com",
       "password": "1234",
       "role": "מנהל",
       "first_name": "דוד",
       "last_name": "כהן"
     },
+
     {
-      "username": "user",
-      "password": "user123",
+      "username": "user@gmail.com",
+      "password": "1234",
       "role": "משתמש",
       "first_name": "מיה",
       "last_name": "לוי"
     }
+
   ]
   

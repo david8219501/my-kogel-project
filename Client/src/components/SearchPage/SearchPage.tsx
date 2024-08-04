@@ -14,7 +14,8 @@ const SearchPage = () => {
 
   return (
     <PageBackground>
-      <Styled.Wrapper className="wrapper">
+      <Styled.Wrapper>
+        <Styled.SearchFieldContainer>
           <Styled.Input
             type="text"
             placeholder="...הכנס מילה לחיפוש"
@@ -22,6 +23,8 @@ const SearchPage = () => {
             onChange={(e) => setSearchWord(e.target.value)}
           />
           <Styled.SearchIcon onClick={searchBuuton}/>
+        </Styled.SearchFieldContainer>
+        <Styled.SearchResults/>
       </Styled.Wrapper>
     </PageBackground>
   );

@@ -24,14 +24,13 @@ const Login = () => {
   const enterdValues = () => {
     const userNameExists = userName.trim() !== '';
     const passwordValid = password.trim() !== '';
-  
-    if (!isValidEmail(userName)) {
-      setShowAlert("נא הכנס אימייל חוקי");
-      return;
-    }
 
     if (userNameExists && passwordValid) {
-      checkDetails();
+      if (!isValidEmail(userName)) {
+        setShowAlert("נא הכנס אימייל חוקי");
+        return;
+      }
+    checkDetails();
     } else if (!userNameExists && !passwordValid) {
         setShowAlert("נא הכנס שם משתמש וסיסמה");
     } else if (!userNameExists) {
@@ -61,10 +60,7 @@ const Login = () => {
     const firstNameValid = firstName.trim()!== '';
     const lastNameValid = lastName.trim()!== '';
 
-    if (!isValidEmail(userName)) {
-      setShowAlert("נא הכנס אימייל חוקי");
-      return;
-    }
+    
   
     if (userNameValid && passwordValid && passwordAuthenticationValid &&
        firstNameValid && lastNameValid) {
@@ -75,7 +71,11 @@ const Login = () => {
           firstName: firstName,
           lastName: lastName
         };
-
+        
+        if (!isValidEmail(userName))  {
+          setShowAlert("נא הכנס אימייל חוקי");
+          return;
+        }
         setShowAlert("!משתמש נוצר בהצלחה");
         setTimeout(() => {
           validUser("user" ,newUser.firstName, newUser.lastName);
@@ -98,16 +98,16 @@ const Login = () => {
   };
 
   return (
-    <Styled.Wrapper className="wrapper">
-      <Styled.Label>
+    <Styled.Wrapper>
+      <Styled.InputContainer>
         <Styled.Input
           type="text"
           placeholder="אימייל"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
-      </Styled.Label>
-      <Styled.Label>
+      </Styled.InputContainer>
+      <Styled.InputContainer>
         <Styled.Input
           type={showPassword ? 'text' : 'password'}
           placeholder="סיסמה"
@@ -116,7 +116,7 @@ const Login = () => {
         />
         {!showPassword && <Styled.ShowIcon onClick={() => setShowPassword(!showPassword)}/>}
         {showPassword && <Styled.HideIcon onClick={() => setShowPassword(!showPassword)}/>}
-      </Styled.Label>
+      </Styled.InputContainer>
       {location.pathname !== '/NewAccount' && (
         <>
           <Styled.NewAccount to="/NewAccount">Create a new account</Styled.NewAccount>
@@ -125,7 +125,7 @@ const Login = () => {
       )}
       {location.pathname === '/NewAccount' && (
         <>
-          <Styled.Label>
+          <Styled.InputContainer>
             <Styled.Input
               type={showPassword ? 'text' : 'password'}
               placeholder="אימות סיסמה"
@@ -134,23 +134,23 @@ const Login = () => {
             />
             {!showPassword && <Styled.ShowIcon onClick={() => setShowPassword(!showPassword)}/>}
             {showPassword && <Styled.HideIcon onClick={() => setShowPassword(!showPassword)}/>}
-          </Styled.Label>
-          <Styled.Label>
+          </Styled.InputContainer>
+          <Styled.InputContainer>
             <Styled.Input
               type="text"
               placeholder="שם פרטי"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
-          </Styled.Label>
-          <Styled.Label>
+          </Styled.InputContainer>
+          <Styled.InputContainer>
             <Styled.Input
               type="text"
               placeholder="שם משפחה"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
-          </Styled.Label>
+          </Styled.InputContainer>
           
           <Styled.EnterButton onClick={createUser}>Create</Styled.EnterButton>
         </>

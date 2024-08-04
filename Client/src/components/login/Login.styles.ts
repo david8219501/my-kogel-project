@@ -19,7 +19,7 @@ export const Tytle = styled.text`
   font-weight: 600;
 `;
 
-export const Label = styled.div`
+export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

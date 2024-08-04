@@ -10,6 +10,14 @@ const PageBackground: FC<PageBackgroundProps> = ({ children }) => {
 
   const navigate = useNavigate(); 
 
+  const logoLink = () => {
+    if (sessionStorage.getItem("isLogged")) {
+      navigate('/SearchPage');
+    } else {
+      navigate('/');
+    }
+  };
+  
 
   const settingsPage = () => {
     navigate("Settings");
@@ -18,7 +26,7 @@ const PageBackground: FC<PageBackgroundProps> = ({ children }) => {
   return (
     <Styled.Background>
       <Styled.SettingsIcon onClick={settingsPage}/>
-      <Styled.Logo src="koogle.png" alt="Logo" /> 
+      <Styled.Logo src="koogle.png" alt="Logo" onClick={logoLink} /> 
       {children}
     </Styled.Background>
   );
